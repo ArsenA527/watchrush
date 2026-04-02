@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bg" x1="10" y1="6" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#101a35"/>
+      <stop offset="1" stop-color="#050712"/>
+    </linearGradient>
+    <linearGradient id="play" x1="20" y1="18" x2="50" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd54a"/>
+      <stop offset="1" stop-color="#ff8a00"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feColorMatrix
+        in="b"
+        type="matrix"
+        values="1 0 0 0 0
+                0 0.9 0 0 0
+                0 0 0.2 0 0
+                0 0 0 0.6 0"
+        result="c"
+      />
+      <feMerge>
+        <feMergeNode in="c"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="52" height="52" rx="14" fill="url(#bg)"/>
+  <rect x="6.75" y="6.75" width="50.5" height="50.5" rx="13.5" fill="none" stroke="rgba(255,255,255,.10)"/>
+
+  <g filter="url(#glow)">
+    <path
+      d="M28 22.5v19l16-9.5-16-9.5z"
+      fill="url(#play)"
+    />
+  </g>
+</svg>
